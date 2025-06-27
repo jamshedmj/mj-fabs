@@ -14,13 +14,13 @@ function Hero() {
             color="blue-gray"
             className="mb-4 lg:text-4xl !leading-tight text-3xl"
           >
-            "Strength You Can Rely On"
+            &ldquo;Strength You Can Rely On&rdquo;
           </Typography>
           <Typography
             variant="lead"
             className="mb-4 !text-gray-500 md:pr-16 xl:pr-28"
           >
-            From design to delivery – precision-engineered steel fabrication for
+            From design to delivery &mdash; precision-engineered steel fabrication for
             every project size.
           </Typography>
           <div className="grid">
