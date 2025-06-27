@@ -125,14 +125,14 @@ export function Navbar() {
           ))}
         </ul>
         <div className="hidden items-center gap-2 lg:flex">
-          <a href="tel:+1234567890">
+          <a href="tel:+971559591480">
             <Button
               variant="text"
               color="gray"
               className="flex items-center gap-2"
             >
               <DevicePhoneMobileIcon className="h-5 w-5 text-textDark" />
-              +1 (234) 567-890
+              +971 55 959 1480
             </Button>
           </a>
         </div>
@@ -160,14 +160,14 @@ export function Navbar() {
             ))}
           </ul>
           <div className="mt-6 mb-4 flex justify-center w-full align-middle text-center gap-2">
-            <a href="tel:+1234567890">
+            <a href="tel:+971 55 959 1480">
               <Button
                 variant="text"
                 color="gray"
                 className="flex items-center gap-2"
               >
                 <DevicePhoneMobileIcon className="h-5 w-5 text-textDark" />
-                +1 (234) 567-890
+                +971 55 959 1480
               </Button>
             </a>
           </div>

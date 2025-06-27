@@ -105,14 +105,14 @@ export function Footer() {
               Contact Us
             </Typography>
             <div className="flex flex-col gap-2">
-              <a href="tel:+1234567890">
+              <a href="tel:+971559591480">
                 <Button
                   variant="text"
                   color="gray"
                   className="flex items-center gap-2 text-gray-400 hover:text-gray-200"
                 >
                   <PhoneIcon className="h-5 w-5" />
-                  +1 (234) 567-890
+                  +971 55 959 1480
                 </Button>
               </a>
               <a href="mailto:info@mjsteelfabrication.com">

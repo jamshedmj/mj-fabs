@@ -95,7 +95,7 @@ export default function RootLayout({
               logo: `${getImagePrefix()}image/mj.png`,
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+1-234-567-890',
+                telephone: '+971559591480',
                 contactType: 'Customer Service',
                 email: 'info@mjsteelfab.com',
               },
