@@ -4,15 +4,78 @@ import {
   Typography,
   Card,
   CardBody,
-  Radio,
   Input,
   Textarea,
   Button,
   IconButton,
 } from '@material-tailwind/react';
 import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import { useRef, useState } from 'react';
+import emailjs from 'emailjs-com';
+import { toast } from 'react-toastify';
 
 export function ContactForm() {
+  const formRef = useRef(null);
+  const [formData, setFormData] = useState({
+    first: '',
+    last: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e: any) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const validateForm = () => {
+    const { first, last, email, message } = formData;
+
+    if (!first || !last || !email || !message) {
+      toast.error('Please fill in all fields.');
+      return false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error('Please enter a valid email address.');
+      return false;
+    }
+
+    if (message.length < 10) {
+      toast.error('Message must be at least 10 characters long.');
+      return false;
+    }
+
+    return true;
+  };
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    emailjs
+      .send(
+        'service_hh8cckt',
+        'template_08rrwj9',
+        {
+          first_name: formData.first,
+          last_name: formData.last,
+          user_email: formData.email,
+          message: formData.message,
+        },
+        '48spd0v-pW66wa4Dg'
+      )
+      .then(() => {
+        toast.success('Message sent!');
+        setFormData({ first: '', last: '', email: '', message: '' });
+      })
+      .catch((error) => {
+        toast.error('Failed to send message. Please try again later.');
+        console.error(error);
+      });
+  };
+
   return (
     <section className="px-8 pt-16">
       <div className="container mx-auto mb-20 text-center">
@@ -65,58 +128,60 @@ export function ContactForm() {
               </div>
             </div>
             <div className="w-full mt-8 md:mt-0 md:px-10 col-span-4 h-full p-5">
-              <form action="#">
+              <form ref={formRef} onSubmit={sendEmail}>
                 <div className="mb-8 grid gap-4 lg:grid-cols-2">
-                  {/* @ts-ignore */}
                   <Input
                     color="gray"
                     size="lg"
                     variant="static"
                     label="First Name"
-                    name="first-name"
+                    name="first"
+                    value={formData.first}
+                    onChange={handleChange}
                     placeholder="eg. Lucas"
-                    containerProps={{
-                      className: '!min-w-full mb-3 md:mb-0',
-                    }}
+                    containerProps={{ className: '!min-w-full mb-3 md:mb-0' }}
                   />
-                  {/* @ts-ignore */}
                   <Input
                     color="gray"
                     size="lg"
                     variant="static"
                     label="Last Name"
-                    name="last-name"
+                    name="last"
+                    value={formData.last}
+                    onChange={handleChange}
                     placeholder="eg. Jones"
-                    containerProps={{
-                      className: '!min-w-full',
-                    }}
+                    containerProps={{ className: '!min-w-full' }}
                   />
                 </div>
-                {/* @ts-ignore */}
                 <Input
                   color="gray"
                   size="lg"
                   variant="static"
                   label="Email"
-                  name="first-name"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="eg. lucas@mail.com"
-                  containerProps={{
-                    className: '!min-w-full mb-8',
-                  }}
+                  containerProps={{ className: '!min-w-full mb-8' }}
                 />
-                {/* @ts-ignore */}
                 <Textarea
                   color="gray"
                   size="lg"
                   variant="static"
                   label="Your Message"
-                  name="first-name"
-                  containerProps={{
-                    className: '!min-w-full mb-8',
-                  }}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Write your message..."
+                  containerProps={{ className: '!min-w-full mb-8' }}
                 />
                 <div className="w-full flex justify-end">
-                  <Button className="w-full md:w-fit" color="gray" size="md">
+                  <Button
+                    type="submit"
+                    className="w-full md:w-fit"
+                    color="gray"
+                    size="md"
+                  >
                     Send message
                   </Button>
                 </div>

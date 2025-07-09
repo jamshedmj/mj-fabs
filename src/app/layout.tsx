@@ -3,9 +3,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import { Layout, FixedPlugin } from '@/components';
-import { getImagePrefix } from '../../utils/utils';
 import logoblack from '../../public/image/mj.png';
-import { log } from 'console';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -125,6 +125,7 @@ export default function RootLayout({
         <Layout>
           {children}
           <FixedPlugin />
+          <ToastContainer position="top-right" autoClose={4000} />
         </Layout>
       </body>
     </html>
