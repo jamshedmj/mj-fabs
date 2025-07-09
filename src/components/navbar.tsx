@@ -150,7 +150,7 @@ export function Navbar() {
         </IconButton>
       </div>
       <Collapse open={open}>
-        <div className="container mx-auto mt-3 border-t border-secondary/50 px-2 pt-4">
+        <div className="container mx-auto mt-3 border-t border-secondary/50 px-2 pt-4 transition-all duration-150 ease-in-out">
           <ul className="flex flex-col gap-4">
             {NAV_MENU.map(({ name, icon: Icon, href }) => (
               <NavItem key={name} href={href}>

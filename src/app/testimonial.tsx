@@ -48,7 +48,7 @@ export function Testimonial() {
           </Typography>
           <Typography
             variant="lead"
-            className="mx-auto w-full px-4 font-normal !text-gray-500 lg:w-8/12"
+            className="mx-auto w-full px-4 font-normal "
           >
             Discover what clients have to say about their experiences working
             with MJ Fabrications. Your satisfaction is our success.
@@ -65,16 +65,13 @@ export function Testimonial() {
               >
                 {testimonial.title}
               </Typography>
-              <Typography className="mb-3 w-full lg:w-8/12 font-normal !text-gray-500">
+              <Typography className="mb-3 w-full lg:w-8/12 font-normal">
                 {testimonial.quote}
               </Typography>
-              <Typography variant="h6" color="blue-gray" className="mb-0.5">
+              <Typography variant="h6" className="mb-0.5">
                 {testimonial.name}
               </Typography>
-              <Typography
-                variant="small"
-                className="font-normal mb-5 !text-gray-500"
-              >
+              <Typography variant="small" className="font-normal mb-5 ">
                 {testimonial.company}
               </Typography>
 

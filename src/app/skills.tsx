@@ -50,10 +50,7 @@ export function Skills() {
         <Typography variant="h1" color="blue-gray" className="mb-4">
           Our Expertise
         </Typography>
-        <Typography
-          variant="lead"
-          className="mx-auto w-full !text-gray-500 lg:w-10/12"
-        >
+        <Typography variant="lead" className="mx-auto w-full  lg:w-10/12">
           At MJ Fabrications, we deliver precision-engineered steel solutions
           that stand the test of time — from fabrication and finishing to
           on-site maintenance and custom jobs.

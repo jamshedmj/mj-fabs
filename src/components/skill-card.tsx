@@ -5,7 +5,7 @@ import { Card, CardBody, Typography } from '@material-tailwind/react';
 
 interface SkillCardProps {
   title: string;
-  image: string;
+  image: any;
   children: React.ReactNode;
 }
 
@@ -58,9 +58,7 @@ export function SkillCard({ image, title, children }: SkillCardProps) {
         <Typography variant="h5" color="textDark" className="mb-3">
           {title}
         </Typography>
-        <Typography className="text-textLight text-sm leading-relaxed">
-          {children}
-        </Typography>
+        <Typography className=" text-sm leading-relaxed">{children}</Typography>
       </div>
     </div>
   );

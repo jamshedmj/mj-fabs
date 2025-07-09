@@ -21,7 +21,7 @@ export function PopularClients() {
           {/* <Typography variant="h6" className="mb-4 uppercase !text-gray-500">
             POPULAR CLIENTS
           </Typography> */}
-          <Typography variant="h2" color="blue-gray" className="mb-4">
+          <Typography variant="h2" className="mb-4">
             Trusted by over 10,000+ <br /> clients
           </Typography>
         </div>

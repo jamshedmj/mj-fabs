@@ -4,6 +4,8 @@ import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import { Layout, FixedPlugin } from '@/components';
 import { getImagePrefix } from '../../utils/utils';
+import logoblack from '../../public/image/mj.png';
+import { log } from 'console';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -83,7 +85,12 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="canonical" href="https://www.mjsteelfabrication.com/" />
         <meta name="theme-color" content="#1F2937" />
+        <meta
+          name="description"
+          content="MJ Steel Fabrication offers industrial and custom steel works including gates, railings, sheds, and structures with premium quality. Contact us now."
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -92,12 +99,12 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'MJ Steel Fabrication',
               url: 'https://www.mjsteelfabrication.com',
-              logo: `${getImagePrefix()}image/mj.png`,
+              logo: logoblack,
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+971559591480',
                 contactType: 'Customer Service',
-                email: 'info@mjsteelfab.com',
+                email: 'steelfabricationsmj@gmail.com',
               },
               sameAs: [
                 'https://www.facebook.com',

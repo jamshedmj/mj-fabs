@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Input, Button, Typography } from '@material-tailwind/react';
-import { getImagePrefix } from '../../utils/utils';
+import heroImage from '../../public/image/image-8.jpg';
 
 function Hero() {
   return (
@@ -20,13 +20,13 @@ function Hero() {
             variant="lead"
             className="mb-4 !text-gray-500 md:pr-16 xl:pr-28"
           >
-            From design to delivery &mdash; precision-engineered steel fabrication for
-            every project size.
+            From design to delivery &mdash; precision-engineered steel
+            fabrication for every project size.
           </Typography>
           <div className="grid">
             <div className="mb-2 flex w-full flex-col gap-4 md:w-10/12 md:flex-row">
               {/* @ts-ignore */}
-              <Input color="gray" label="Enter your email" size="lg" />
+              <Input color="black" label="Enter your email" size="lg" />
               <Button color="gray" className="w-full px-4 md:w-[12rem]">
                 Get a Quote
               </Button>
@@ -34,11 +34,12 @@ function Hero() {
           </div>
         </div>
         <Image
-          width={1024}
-          height={1024}
-          alt="team work"
-          src={`${getImagePrefix()}image/image-8.jpg`}
+          src={heroImage}
+          alt="Steel fabricator"
+          width={800}
+          height={600}
           className="h-[36rem] w-full rounded-xl object-cover"
+          priority
         />
       </div>
     </header>

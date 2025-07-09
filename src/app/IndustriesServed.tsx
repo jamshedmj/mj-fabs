@@ -27,7 +27,7 @@ export function IndustriesServed() {
         <Typography variant="h2" color="blue-gray" className="mb-4 font-bold">
           Industries Served
         </Typography>
-        <Typography variant="lead" className="mx-auto max-w-3xl !text-gray-600">
+        <Typography variant="lead" className="mx-auto max-w-3xl">
           At MJ Fabrications we service a wide range of industries from
           automotive to medical to aerospace and beyond. The products are mainly
           used in customized automated assembly lines, which is part of what
